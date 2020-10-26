@@ -325,12 +325,8 @@ textarea.input1 + .shadow-input1 {
 [ Responsive ]*/
 
 @media (max-width: 1200px) {
-  .contact1-pic {
-    width: 33.5%;
-  }
-
   .contact1-form {
-    width: 44%;
+    width: 100%;
   }
 }
 
@@ -339,12 +335,9 @@ textarea.input1 + .shadow-input1 {
     padding: 90px 80px 88px 90px;
   }
 
-  .contact1-pic {
-    width: 35%;
-  }
 
   .contact1-form {
-    width: 55%;
+    width: 100%;
   }
 }
 
