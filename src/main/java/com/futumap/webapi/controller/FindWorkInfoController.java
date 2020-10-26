@@ -11,10 +11,10 @@ import java.util.List;
 @RestController
 public class FindWorkInfoController {
     @GetMapping
-    public String index() {
+    public String mainEntry() {
         return "index";
     }
-    @GetMapping
+    @GetMapping("/my_profile")
     public String myProfile() {
         return "my_profile";
     }
