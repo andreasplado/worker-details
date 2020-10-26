@@ -1,6 +1,5 @@
 package com.futumap.webapi.service;
 
-import com.futumap.webapi.dao.entity.JobEntity;
 import com.futumap.webapi.dao.entity.UserEntity;
 
 import java.util.List;

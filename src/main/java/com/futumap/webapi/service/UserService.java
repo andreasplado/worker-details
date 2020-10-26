@@ -1,7 +1,6 @@
 package com.futumap.webapi.service;
 
 import com.futumap.webapi.dao.entity.UserEntity;
-import com.futumap.webapi.respository.CategoryRepository;
 import com.futumap.webapi.respository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
