@@ -1,20 +1,32 @@
 package com.futumap.webapi.controller;
 
-import com.futumap.webapi.dao.entity.UserEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import com.futumap.webapi.dao.entity.GoogleAccountData;
+import com.futumap.webapi.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class FindWorkInfoController {
-    @RequestMapping("/")
-    public String mainEntry() {
-        return "index";
+
+    @Autowired
+    UserService userService;
+    @RequestMapping(value="/login", method = RequestMethod.POST)
+    public String login(@RequestBody GoogleAccountData googleAccountData) {
+        if(userService.existsByGoogleAccountId(googleAccountData.getGoogleAccountId())){
+            return "index";
+        }else{
+            return "login";
+        }
+
     }
+    @RequestMapping("/")
+    public String main(){
+        return "login";
+    }
+
     @RequestMapping("/my_profile")
     public String myProfile() {
         return "my_profile";

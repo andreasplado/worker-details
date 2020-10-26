@@ -19,6 +19,9 @@ public class UserEntity {
     )
     private Integer id;
 
+    @Column(name = "googleAccountId")
+    private String googleAccountId;
+
     @Column(name = "created_at")
     private Date createdAt;
 
@@ -69,4 +72,11 @@ public class UserEntity {
         this.updatedAt = new Date();
     }
 
+    public String getGoogleAccountId() {
+        return googleAccountId;
+    }
+
+    public void setGoogleAccountId(String googleAccountId) {
+        this.googleAccountId = googleAccountId;
+    }
 }

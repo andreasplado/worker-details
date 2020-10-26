@@ -19,6 +19,20 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public Optional<UserEntity> findByUsernameAndPass(String username, String password) {
+        repository.findUsernameByCredentials(username, password);
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean existsByGoogleAccountId(String googleAccountId) {
+        if(repository.findByGoogleAccountId(googleAccountId).isPresent()){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public UserEntity save(UserEntity userEntity) {
         return repository.save(userEntity);
     }
