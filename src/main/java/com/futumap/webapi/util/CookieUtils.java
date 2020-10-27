@@ -11,6 +11,6 @@ public class CookieUtils {
                 .filter(c -> c.getName().equals(cookieName))
                 .findFirst()
                 .map(Cookie::getValue)
-                .orElse(null);
+                .orElse("");
     }
 }
