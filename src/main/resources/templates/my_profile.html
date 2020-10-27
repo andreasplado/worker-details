@@ -34,16 +34,14 @@
     <!-- END Pre-requisites -->
 
     <script>
-
-    // promise that would be resolved when gapi would be loaded
-    var gapiPromise = (function(){
-      var deferred = $.Deferred();
       window.onLoadCallback = function(){
-        deferred.resolve(gapi);
-      };
-      return deferred.promise()
-    }());
-      window.onLoadCallback = function(){
+            var gapiPromise = (function(){
+                var deferred = $.Deferred();
+                window.onLoadCallback = function(){
+                        deferred.resolve(gapi);
+                    };
+                return deferred.promise()
+                }());
             var authInited = gapiPromise.then(function(){
               gapi.auth2.init({
                 client_id: '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
