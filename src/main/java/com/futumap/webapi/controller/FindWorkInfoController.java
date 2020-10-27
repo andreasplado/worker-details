@@ -18,6 +18,7 @@ public class FindWorkInfoController {
         if(userService.existsByGoogleAccountId(userEntity.getGoogleAccountId())){
             return "index";
         }else{
+            userService.save(userEntity);
             return "login";
         }
 
