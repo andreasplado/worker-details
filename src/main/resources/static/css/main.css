@@ -327,6 +327,38 @@ textarea.input1 + .shadow-input1 {
   transform: translateX(10px);
 }
 
+body {
+  margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
 
 
 
@@ -348,6 +380,16 @@ textarea.input1 + .shadow-input1 {
   .contact1-form {
     width: 100%;
   }
+  ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -362,11 +404,32 @@ textarea.input1 + .shadow-input1 {
   .contact1-form {
     width: 100%;
   }
+
+  ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
 }
 
 @media (max-width: 576px) {
   .container-contact1 {
     padding: 90px 15px 88px 15px;
+  }
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 100px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
   }
 }
 
@@ -436,37 +499,4 @@ textarea.input1 + .shadow-input1 {
     visibility: visible;
     opacity: 1;
   }
-}
-
-
-body {
-  margin: 0;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
 }
