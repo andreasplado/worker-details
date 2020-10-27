@@ -83,7 +83,7 @@
 
         <button id="signinButton">Sign in with Google</button>
         <script>
-          $('.g-signin2').click(function() {
+          $('#signinButton').click(function() {
             // signInCallback defined in step 6.
             auth2.grantOfflineAccess().then(signInCallback);
             console.log("lol");
