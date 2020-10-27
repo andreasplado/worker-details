@@ -29,19 +29,11 @@
     <!-- BEGIN Pre-requisites -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
     </script>
-    <script src="https://apis.google.com/js/client:platform.js?onload=onLoadCallback" async defer>
-    </script>
     <!-- END Pre-requisites -->
 
     <script>
 
-      window.onLoadCallback = function(){
-      gapi.auth2.init({
-            client_id: '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
-            // Scopes to request in addition to 'profile' and 'email'
-            //scope: 'additional_scope'
-        });
-      }
+    var auth2 = gapi.auth2.init();
 
     var profile = auth2.currentUser.get().getBasicProfile();
     var $name = $("#name");
