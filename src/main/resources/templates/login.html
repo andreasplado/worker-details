@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Article">
 <head>
     <title>Töötaja haldussüsteem</title>
     <meta charset="UTF-8">
-    <meta name="485896048610-m7qu38fi7o06822jlpm8odo612a73pl7.apps.googleusercontent.com" content="AIzaSyDMMAvlcNTyJdo6Z4EZjQ08uofNWRStrIs.apps.googleusercontent.com">
+    <meta name="485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com"
+          content="AIzaSyDMMAvlcNTyJdo6Z4EZjQ08uofNWRStrIs.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -20,6 +21,56 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- BEGIN Pre-requisites -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+    </script>
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+    </script>
+    <!-- END Pre-requisites -->
+
+    <script>
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+
+    </script>
+
+    <script>
+        function signInCallback(authResult) {
+          if (authResult['code']) {
+
+            // Hide the sign-in button now that the user is authorized, for example:
+            $('#signinButton').attr('style', 'display: none');
+
+            // Send the code to the server
+            $.ajax({
+              type: 'POST',
+              url: 'http://example.com/storeauthcode',
+              // Always include an `X-Requested-With` header in every AJAX request,
+              // to protect against CSRF attacks.
+              headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+              },
+              contentType: 'application/octet-stream; charset=utf-8',
+              success: function(result) {
+                // Handle or verify the server response.
+              },
+              processData: false,
+              data: authResult['code']
+            });
+          } else {
+            // There was an error.
+          }
+        }
+</script>
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!--===============================================================================================-->
 </head>
@@ -27,7 +78,13 @@
 <div class="contact1">
     <div class="container-contact1">
 
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2" id="signinButton" data-onsuccess="onSignIn"></div>
+        <script>
+          $('#signinButton').click(function() {
+            // signInCallback defined in step 6.
+            auth2.grantOfflineAccess().then(signInCallback);
+          });
+        </script>
     </div>
 </div>
 
@@ -49,6 +106,7 @@
 
 
 
+
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -59,6 +117,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+
 
 
 
