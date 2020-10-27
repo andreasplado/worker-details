@@ -80,7 +80,7 @@
 
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <script>
-          $('#signinButton').click(function() {
+          $('.g-signin2').click(function() {
             // signInCallback defined in step 6.
             auth2.grantOfflineAccess().then(signInCallback);
           });
