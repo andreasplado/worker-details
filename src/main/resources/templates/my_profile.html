@@ -58,7 +58,7 @@
 
               authInited.then(function(){
                 // will be executed after gapi is loaded, and gapi.auth2.init was called
-                var profile = auth2Var.currentUser.get().getBasicProfile();
+                var profile = authInited.currentUser.get().getBasicProfile();
                 var $name = $("#name");
                 var $email = $("#email");
 
