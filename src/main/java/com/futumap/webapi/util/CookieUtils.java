@@ -11,7 +11,7 @@ public class CookieUtils {
         final Cookie[] cookies = httpServletRequest.getCookies();
         if(cookies == null) return null; // avoids if blocks
         return Arrays.stream(cookies)
-                .filter(e -> "random cookie".equals(e.getName()))
+                .filter(e -> name.equals(e.getName()))
                 .findAny()
                 .map(Cookie::getValue)
                 .orElse(null);
