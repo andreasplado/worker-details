@@ -33,6 +33,11 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public Optional<UserEntity> findByGoogleAccountId(String googleAccountId) {
+        return repository.findByGoogleAccountId(googleAccountId);
+    }
+
+    @Override
     public UserEntity save(UserEntity userEntity) {
         return repository.save(userEntity);
     }

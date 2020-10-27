@@ -5,6 +5,7 @@ import com.futumap.webapi.service.UserService;
 import com.futumap.webapi.util.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,7 +55,8 @@ public class FindWorkInfoController {
 
 
     @RequestMapping("/my_profile")
-    public String myProfile() {
+    public String myProfile(Model model) {
+        model.addAttribute("myProfile", userService.existsByGoogleAccountId());
         return "my_profile";
     }
 

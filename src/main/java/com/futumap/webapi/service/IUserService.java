@@ -10,6 +10,7 @@ public interface IUserService {
     List<UserEntity> findAll();
     Optional<UserEntity> findByUsernameAndPass(String username, String password);
     boolean existsByGoogleAccountId(String googleAccountId);
+    Optional<UserEntity> findByGoogleAccountId(String googleAccountId);
     UserEntity save(UserEntity userEntity);
     UserEntity update(UserEntity userEntity);
     void delete(Integer id);

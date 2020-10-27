@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Töötaja haldussüsteem</title>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
 				</span>
 
             <div class="wrap-input1 validate-input" data-validate="Name is required">
-                <input class="input1" type="text" name="name" placeholder="Nimi">
+                <input class="input1" type="text" name="name" placeholder="Nimi" th:value="{">
                 <span class="shadow-input1"></span>
             </div>
             <div class="wrap-input1 validate-input" data-validate="Kontakt">
