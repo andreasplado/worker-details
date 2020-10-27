@@ -51,9 +51,8 @@ public class FindWorkInfoController {
     }
 
 
-    @RequestMapping("/my_profile/{google-account-id}")
-    public String myProfile(Model model, @PathVariable("google-account-id") String googleAccountId) {
-        model.addAttribute("myProfile", userService.findByGoogleAccountId(googleAccountId));
+    @RequestMapping("/my_profile")
+    public String myProfile() {
         return "my_profile";
     }
 
