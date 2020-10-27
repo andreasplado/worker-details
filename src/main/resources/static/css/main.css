@@ -360,6 +360,11 @@ li a:hover:not(.active) {
   color: white;
 }
 
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 
 
@@ -390,7 +395,6 @@ li a:hover:not(.active) {
       height: 100%;
       overflow: auto;
       position: relative;
-      display:inline;
      }
 }
 
@@ -415,7 +419,6 @@ li a:hover:not(.active) {
     height: 100%;
     overflow: auto;
     position: relative;
-    display:inline;
    }
 }
 
@@ -432,7 +435,6 @@ li a:hover:not(.active) {
       height: 100%;
       overflow: auto;
       position: relative;
-      display:inline;
   }
 }
 
