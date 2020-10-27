@@ -57,4 +57,11 @@ public class FindWorkInfoController {
     public String myProfile() {
         return "my_profile";
     }
+
+    @RequestMapping("/logout")
+    public String logout(HttpServletResponse response) {
+        Cookie cookie = new Cookie(USER_STATE, LOGGED_IN);
+        cookie.setMaxAge(0);
+        return "main";
+    }
 }
