@@ -1,6 +1,6 @@
 package com.futumap.webapi.controller;
 
-import com.futumap.webapi.dao.entity.GoogleAccountData;
+import com.futumap.webapi.dao.entity.UserEntity;
 import com.futumap.webapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +14,8 @@ public class FindWorkInfoController {
     @Autowired
     UserService userService;
     @RequestMapping(value="/login", method = RequestMethod.POST)
-    public String login(@RequestBody GoogleAccountData googleAccountData) {
-        if(userService.existsByGoogleAccountId(googleAccountData.getGoogleAccountId())){
+    public String login(@RequestBody UserEntity userEntity) {
+        if(userService.existsByGoogleAccountId(userEntity.getGoogleAccountId())){
             return "index";
         }else{
             return "login";
