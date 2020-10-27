@@ -41,9 +41,13 @@ public class FindWorkInfoController {
     @GetMapping("/")
     public String main(HttpServletRequest request) {
         String value = CookieUtils.getCookieValue(request, LOGGED_IN);
-        if (value.equals("1")) {
-            return "index";
-        } else {
+        if(value != null) {
+            if (value.equals("1")) {
+                return "index";
+            } else {
+                return "login";
+            }
+        }else{
             return "login";
         }
     }
