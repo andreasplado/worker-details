@@ -33,7 +33,15 @@
 
     <script>
 
-    var auth2 = gapi.auth2.init();
+    gapi.load('auth2', initSigninV2);
+
+    function initSigninV2() {
+        gapi.auth2.init({
+            client_id: 'CLIENT_ID.apps.googleusercontent.com'
+        }).then(function (authInstance) {
+            // now auth2 is fully initialized
+        });
+    }
 
     var profile = auth2.currentUser.get().getBasicProfile();
     var $name = $("#name");
