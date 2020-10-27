@@ -22,6 +22,9 @@ public class UserEntity {
     @Column(name = "googleAccountId")
     private String googleAccountId;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "created_at")
     private Date createdAt;
 
@@ -78,5 +81,13 @@ public class UserEntity {
 
     public void setGoogleAccountId(String googleAccountId) {
         this.googleAccountId = googleAccountId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
