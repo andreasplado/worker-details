@@ -60,7 +60,7 @@ public class FindWorkInfoController {
 
     @RequestMapping("/logout")
     public String logout(HttpServletResponse response) {
-        Cookie cookie = new Cookie(USER_STATE, LOGGED_IN);
+        Cookie cookie = new Cookie(USER_STATE, LOGGED_OUT);
         cookie.setMaxAge(0);
         return "login";
     }
