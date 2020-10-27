@@ -49,6 +49,7 @@
         function signInCallback(authResult) {
           if (authResult['code']) {
           console.log(authResult);
+          var profile = auth2.currentUser.get().getBasicProfile();
 
             // Hide the sign-in button now that the user is authorized, for example:
             $('#signinButton').attr('style', 'display: none');
@@ -56,7 +57,7 @@
             // Send the code to the server
             $.ajax({
               type: 'POST',
-              data: JSON.stringify({ "googleAccountId": authResult['code'] }),
+              data: JSON.stringify({ "googleAccountId": profile.getId() }),
               url: 'https://worker-details.herokuapp.com/login',
               // Always include an `X-Requested-With` header in every AJAX request,
               // to protect against CSRF attacks.
