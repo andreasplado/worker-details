@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 @Controller
 public class FindWorkInfoController {
 
-    private static final String LOGGED_IN = "user-state";
+    private static final String USER_STATE = "user-state";
+    private static final String LOGGED_IN = "logged-in";
+    private static final String LOGGED_OUT = "logged-out";
 
     @Autowired
     UserService userService;
@@ -27,7 +27,7 @@ public class FindWorkInfoController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@RequestBody UserEntity userEntity, HttpServletResponse response) {
         if (userService.existsByGoogleAccountId(userEntity.getGoogleAccountId())) {
-            Cookie cookie = new Cookie(LOGGED_IN, "1");
+            Cookie cookie = new Cookie(USER_STATE, LOGGED_IN);
             cookie.setSecure(true);
             response.addCookie(cookie);
             return "index";
@@ -40,9 +40,9 @@ public class FindWorkInfoController {
 
     @GetMapping("/")
     public String main(HttpServletRequest request) {
-        String value = CookieUtils.getCookieValue(request, LOGGED_IN);
+        String value = CookieUtils.getCookieValue(request, USER_STATE);
         if(value != null) {
-            if (value.equals("1")) {
+            if (value.equals(LOGGED_IN)) {
                 return "index";
             } else {
                 return "login";
