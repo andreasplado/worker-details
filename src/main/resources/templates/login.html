@@ -56,7 +56,7 @@
             // Send the code to the server
             $.ajax({
               type: 'POST',
-              data: JSON.stringify({ "command": "on" }),
+              data: JSON.stringify({ "googleAccountId": authResult['code'] }),
               url: 'https://worker-details.herokuapp.com/login',
               // Always include an `X-Requested-With` header in every AJAX request,
               // to protect against CSRF attacks.
