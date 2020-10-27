@@ -42,14 +42,12 @@
                 //scope: 'additional_scope'
             });
             var profile = auth2Var.currentUser.get().getBasicProfile();
+            var $name = $("#name");
+            var $email = $("#email");
+
+            $name.val(profile.getName());
+            $email.val(profile.getEmail());
       }
-
-
-    var $name = $("#name");
-    var $email = $("#email");
-
-    $name.val(profile.getName());
-    $email.val(profile.getEmail());
 
     </script>
 </head>
