@@ -63,7 +63,6 @@
 
 
     function logOut(){
-
           gapi.load('auth2', function() {
             var auth2 = gapi.auth2.init({
               client_id: '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
