@@ -114,8 +114,9 @@
             // signInCallback defined in step 6.
             auth2.grantOfflineAccess().then(signInCallback);
           });
-                      function onSuccess(googleUser) {
+            function onSuccess(googleUser) {
               console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+              window.location.href="https://worker-details.herokuapp.com";
             }
             function onFailure(error) {
               console.log(error);
