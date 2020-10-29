@@ -99,8 +99,7 @@
             // signInCallback defined in step 6.
             auth2.grantOfflineAccess().then(signInCallback);
           });
-          }
-          function onSuccess(googleUser) {
+                      function onSuccess(googleUser) {
               console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
             }
             function onFailure(error) {
@@ -116,6 +115,7 @@
                 'onsuccess': onSuccess,
                 'onfailure': onFailure
               });
+            }
 
         </script>
 
