@@ -49,8 +49,14 @@ public class WorkerController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public WorkerEntity create(@RequestBody WorkerEntity worker, UriComponentsBuilder ucBuilder) {
+    public WorkerEntity create(@RequestBody WorkerEntity worker) {
         workerService.save(worker);
+        return worker;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/saveall")
+    public List<WorkerEntity> createWorkersFromArray(@RequestBody List<WorkerEntity> worker) {
+        workerService.saveAll(worker);
         return worker;
     }
 

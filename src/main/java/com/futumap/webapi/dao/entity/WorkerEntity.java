@@ -19,8 +19,14 @@ public class WorkerEntity {
     )
     private Integer id;
 
-    @Column(name = "name")
-    private String title;
+    @Column(name = "company")
+    private String company;
+
+    @Column(name = "firstname")
+    private String firstname;
+
+    @Column(name = "lastname")
+    private String lastname;
 
     @Column(name = "profession")
     private String proffession;
@@ -37,6 +43,9 @@ public class WorkerEntity {
     @Column(name = "worker_needs")
     private String worker_needs;
 
+    @Column(name = "notes")
+    private String notes;
+
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -49,8 +58,8 @@ public class WorkerEntity {
 
     }
 
-    public WorkerEntity(String title, String description, String email) {
-        this.setTitle(title);
+    public WorkerEntity(String firstname, String description, String email) {
+        this.setFirstname(firstname);
         this.setDescription(description);
         this.setEmail(email);
         this.setCreatedAt(new Date());
@@ -96,12 +105,12 @@ public class WorkerEntity {
         this.updatedAt = new Date();
     }
 
-    public String getTitle() {
-        return title;
+    public String getFirstname() {
+        return firstname;
     }
 
-    private void setTitle(String title) {
-        this.title = title;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getDescription() {
@@ -116,7 +125,7 @@ public class WorkerEntity {
         return email;
     }
 
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -142,6 +151,30 @@ public class WorkerEntity {
 
     public void setWorker_needs(String worker_needs) {
         this.worker_needs = worker_needs;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }
 
