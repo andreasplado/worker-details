@@ -61,19 +61,20 @@
         logOut();
     });
 
+
     function logOut(){
-        gapi.auth.authorize(
-            {
-                'client_id': CLIENT_ID,
-                'scope': SCOPES,
-                'immediate': false,
-                cookie_policy: 'single_host_origin',
-                response_type: 'token id_token'
-            },
-            function (authResult) {
-                window.location.href="https://worker-details.herokuapp.com/logout";
-                gapi.auth.signOut();}
-        )
+      gapi.load('auth2', function() {
+        /* Ready. Make a call to gapi.auth2.init or some other API */
+                gapi.auth.authorize(
+                    {
+                        'client_id': '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
+                    },
+                    function (authResult) {
+                        gapi.auth.signOut();
+                        window.location.href="https://worker-details.herokuapp.com/logout";
+                     }
+                )
+      });
     }
     
     
