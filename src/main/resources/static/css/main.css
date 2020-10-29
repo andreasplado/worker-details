@@ -125,20 +125,18 @@ iframe {
 
 
 
-/*//////////////////////////////////////////////////////////////////
-[ Contact 1 ]*/
-
-.contact1 {
-  width: 100%;
-  min-height: 100%;
-  padding: 15px;
-
+body{
   background: #009bff;
   background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
   background: -o-linear-gradient(left, #0072ff, #00c6ff);
   background: -moz-linear-gradient(left, #0072ff, #00c6ff);
   background: linear-gradient(left, #0072ff, #00c6ff);
+}
 
+.contact1 {
+  width: 100%;
+  min-height: 100%;
+  padding: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -363,6 +361,7 @@ li a:hover:not(.active) {
 .main{
     display: flex;
     justify-content: space-between;
+    height:100%:
 }
 
 
