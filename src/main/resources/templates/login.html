@@ -50,6 +50,8 @@
 
 
 
+
+
     </script>
 
     <script>
@@ -85,6 +87,8 @@
 
 
 
+
+
     </script>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -92,14 +96,17 @@
 </head>
 <body>
 
-<div class="contact1">
-    <div><h1 class="p-title">Töötja tegevuslogi</h1><br/></div>
-    <div><p class="p-title">Töötaja tegevuslogi - Töötajate kohta vajalike informatsiooni kogumit andmebaasis.</p>
+<div class="container-contact1">
+    <div class="contact1">
+        <div><h1 class="p-title">Töötja tegevuslogi</h1><br/></div>
+        <div><p class="p-title">Töötaja tegevuslogi - Töötajate kohta vajalike informatsiooni kogumit andmebaasis.</p>
+        </div>
     </div>
 </div>
-<div class="contact1">
-    <button id="my-signin">Logige sisse Googlega</button>
-    <script>
+<div class="container-contact1">
+    <div class="contact1">
+        <button id="my-signin">Logige sisse Googlega</button>
+        <script>
           $('#my-signin').click(function() {
             // signInCallback defined in step 6.
             auth2.grantOfflineAccess().then(signInCallback);
@@ -125,8 +132,11 @@
 
 
 
-    </script>
 
+
+        </script>
+
+    </div>
 </div>
 
 
@@ -151,6 +161,8 @@
 
 
 
+
+
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -161,6 +173,8 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+
+
 
 
 
