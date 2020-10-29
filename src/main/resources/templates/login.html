@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="485896048610-m7qu38fi7o06822jlpm8odo612a73pl7.apps.googleusercontent.com"
+          content="AIzaSyDMMAvlcNTyJdo6Z4EZjQ08uofNWRStrIs.apps.googleusercontent.com">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <!--===============================================================================================-->
@@ -21,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <script
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
@@ -85,17 +88,37 @@
 <div class="contact1">
     <div class="container-contact1-left">
 
-        <button id="signinButton">Sign in with Google</button>
+
+        <button id="my-signin">Logige sisse Googlega</button>
         <script>
-          $('#signinButton').click(function() {
+          $('#my-signin').click(function() {
             // signInCallback defined in step 6.
             auth2.grantOfflineAccess().then(signInCallback);
           });
+            function onSuccess(googleUser) {
+              console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            }
+            function onFailure(error) {
+              console.log(error);
+            }
+            function renderButton() {
+              gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+              });
+            }
         </script>
+
     </div>
 
     <div class="container-contact1-right">
-        <h1 class=""
+        <h1 class="p-title">Töötja tegevuslogi</h1>
+        <p class="p-title">Töötaja tegevuslogi on mõeldud töötajate kohta</p> vajalike informatsiooni kogumit andmebaasis.</p>
     </div>
 </div>
 

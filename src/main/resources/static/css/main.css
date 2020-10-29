@@ -131,6 +131,7 @@ body{
   background: -o-linear-gradient(left, #0072ff, #00c6ff);
   background: -moz-linear-gradient(left, #0072ff, #00c6ff);
   background: linear-gradient(left, #0072ff, #00c6ff);
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .contact1 {
