@@ -88,6 +88,7 @@ public class ExcelUtils {
 
                     cellIdx++;
                 }
+                System.out.println(workerEntity.getCompany());
 
                 workers.add(workerEntity);
             }
