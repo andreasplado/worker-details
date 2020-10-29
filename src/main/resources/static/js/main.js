@@ -56,6 +56,23 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
+
+    $('#logout').click(function(){
+        logOut();
+    });
+
+    function logOut(){
+        gapi.auth.authorize(
+            {
+                'client_id': CLIENT_ID,
+                'scope': SCOPES,
+                'immediate': false,
+                cookie_policy: 'single_host_origin',
+                response_type: 'token id_token'
+            },
+            function (authResult) {   gapi.auth.signOut();}
+        )
+    }
     
     
 
