@@ -23,6 +23,21 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
     <!--===============================================================================================-->
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+    </script>
+    <!-- END Pre-requisites -->
+
+    <script>
+        function start() {
+          gapi.load('auth2', function() {
+            auth2 = gapi.auth2.init({
+              client_id: '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
+              // Scopes to request in addition to 'profile' and 'email'
+              //scope: 'additional_scope'
+            });
+          });
+        }
+    </script>
 </head>
 <body>
 
@@ -32,7 +47,8 @@
             <li><a href="/" class="active"><i class="fa fa-home fa-2x" style="color:white" aria-hidden="true"></i></a>
             </li>
             <li><a href="/my_profile"><i class="fa fa-user fa-2x" style="color:white" aria-hidden="true"></i></a></li>
-            <li id="logout"><a href="#"><i class="fa fa-sign-out fa-2x" style="color:white" aria-hidden="true"></i></a></li>
+            <li id="logout"><a href="#"><i class="fa fa-sign-out fa-2x" style="color:white" aria-hidden="true"></i></a>
+            </li>
         </ul>
     </div>
     <div class="contact1">
@@ -101,6 +117,7 @@
 
 
 
+
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -111,6 +128,7 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+
 
 
 
