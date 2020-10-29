@@ -27,6 +27,7 @@ public class FindWorkInfoController {
         if (userService.existsByGoogleAccountId(userEntity.getGoogleAccountId())) {
             Cookie cookie = new Cookie(USER_STATE, LOGGED_IN);
             cookie.setSecure(true);
+            cookie.setMaxAge(7 * 24 * 60 * 60);
             response.addCookie(cookie);
             return "index";
         } else {
@@ -58,8 +59,11 @@ public class FindWorkInfoController {
 
     @RequestMapping("/logout")
     public String logout(HttpServletResponse response) {
-        Cookie cookie = new Cookie(USER_STATE, "");
+        Cookie cookie = new Cookie(USER_STATE, null);
         cookie.setMaxAge(0);
+        cookie.setSecure(true);
+        cookie.setPath("/");
+        response.addCookie(cookie);
         return "login";
     }
 }
