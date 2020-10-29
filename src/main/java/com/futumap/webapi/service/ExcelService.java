@@ -22,6 +22,7 @@ public class ExcelService implements IExcelService {
             List<WorkerEntity> tutorials = ExcelUtils.excelToWorkerList(file.getInputStream());
             repository.saveAll(tutorials);
         } catch (IOException e) {
+            System.out.println("Error:" + e.getMessage());
             throw new RuntimeException("fail to store excel data: " + e.getMessage());
         }
     }
