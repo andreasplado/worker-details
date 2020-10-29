@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@CrossOrigin("http://localhost:8081")
 @Controller
 @RequestMapping("/excel")
 public class ExcelController {
