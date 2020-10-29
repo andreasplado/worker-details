@@ -63,21 +63,11 @@
 
 
     function logOut(){
-        gapi.load('auth2', function() {
-                auth2 = gapi.auth2.init({
-                  client_id: '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
-                  // Scopes to request in addition to 'profile' and 'email'
-                  //scope: 'additional_scope'
-                });
-              });
-        gapi.authorize({
-                      'client_id': '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
-                  },
-                  function (authResult) {
-                      gapi.auth.signOut();
-                      window.location.href="https://worker-details.herokuapp.com/logout";
-                  }
-              );
+
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+          window.location.href="https://worker-details.herokuapp.com/logout";
+        });
     }
     
     
