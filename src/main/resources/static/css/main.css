@@ -400,6 +400,7 @@ li a:hover:not(.active) {
     display: flex;
     justify-content: space-between;
     height:100%:
+    width:0%;
 }
 
 
