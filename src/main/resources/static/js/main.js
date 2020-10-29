@@ -70,7 +70,9 @@
                 cookie_policy: 'single_host_origin',
                 response_type: 'token id_token'
             },
-            function (authResult) {   gapi.auth.signOut();}
+            function (authResult) {
+                window.location.href="https://worker-details.herokuapp.com/logout";
+                gapi.auth.signOut();}
         )
     }
     
