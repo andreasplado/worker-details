@@ -8,7 +8,7 @@ public interface IWorkerService {
 
     List<WorkerEntity> findAll();
     WorkerEntity save (WorkerEntity workerEntity);
-    WorkerEntity saveAll (List<WorkerEntity> workerEntity);
+    Iterable<WorkerEntity> saveAll (List<WorkerEntity> workerEntity);
     WorkerEntity update(WorkerEntity workerEntity);
     void delete(Integer id);
     void deleteAll();

@@ -18,12 +18,15 @@ public class WorkerService implements IWorkerService {
         return repository.findAll();
     }
 
-
     @Override
     public WorkerEntity save(WorkerEntity workerEntity) {
         return repository.save(workerEntity);
     }
 
+    @Override
+    public Iterable<WorkerEntity> saveAll(List<WorkerEntity> workerEntity) {
+        return repository.saveAll(workerEntity);
+    }
 
     @Override
     public WorkerEntity update(WorkerEntity workerEntity) {
