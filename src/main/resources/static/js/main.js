@@ -70,17 +70,17 @@
               // Scopes to request in addition to 'profile' and 'email'
               //scope: 'additional_scope'
             });
-          });
-          auth2.authorize(
-                              {
-                                  'client_id': '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
-                              },
-                              function (authResult) {
+              auth2.authorize(
+                                  {
+                                      'client_id': '485896048610-rk8i4i4fkh9c1ss58207kl3ltoibpsaa.apps.googleusercontent.com',
+                                  },
+                                  function (authResult) {
 
-                                  gapi.auth.signOut();
-                                  window.location.href="https://worker-details.herokuapp.com/logout";
-                                  }
-                          )
+                                      gapi.auth.signOut();
+                                      window.location.href="https://worker-details.herokuapp.com/logout";
+                                      }
+                              )
+          });
     }
     
     
