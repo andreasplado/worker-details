@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin("http://localhost:8081")
 @Controller
-@RequestMapping("/api/excel")
+@RequestMapping("/excel")
 public class ExcelController {
 
     @Autowired
