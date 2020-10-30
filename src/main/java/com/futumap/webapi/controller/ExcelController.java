@@ -6,12 +6,15 @@ import com.futumap.webapi.dao.entity.WorkerEntity;
 import com.futumap.webapi.model.ResponseMessage;
 import com.futumap.webapi.service.ExcelService;
 import com.futumap.webapi.util.ExcelUtils;
+import org.hibernate.boot.Metadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/excel")
@@ -21,7 +24,9 @@ public class ExcelController {
     ExcelService excelService;
 
     @PostMapping("/upload")
-    public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<ResponseMessage> uploadFile(@RequestPart(value = "file",required = true) MultipartFile file,
+                                                      @RequestPart(value = "metadata",required = true) Metadata metadata,
+                                                      HttpServletResponse response) {
         String message = "";
 
         if (ExcelUtils.hasExcelFormat(file)) {
