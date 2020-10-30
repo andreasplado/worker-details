@@ -28,7 +28,7 @@ public class ExcelService implements IExcelService {
 
             repository.saveAll(tutorials);
         } catch (IOException e) {
-            logger.log(Level.ALL, "Error:" + e.getMessage());
+            logger.log(Level.OFF, "Error:" + e.getMessage());
             throw new RuntimeException("fail to store excel data: " + e.getMessage());
         }
     }
