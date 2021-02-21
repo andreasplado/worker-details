@@ -1,4 +1,4 @@
-#futumap
+# Worker details
 
 # Run: 
 ```mvn spring-boot:run```
